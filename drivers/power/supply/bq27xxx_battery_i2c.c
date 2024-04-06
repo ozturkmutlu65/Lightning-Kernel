@@ -217,7 +217,13 @@ static int bq27xxx_battery_i2c_remove(struct i2c_client *client)
 {
 	struct bq27xxx_device_info *di = i2c_get_clientdata(client);
 
+<<<<<<< HEAD
 	free_irq(client->irq, di);
+=======
+	if (client->irq)
+		free_irq(client->irq, di);
+
+>>>>>>> 73cd156e51f631e75a41f24f68109337bed3afb7
 	bq27xxx_battery_teardown(di);
 
 	mutex_lock(&battery_mutex);

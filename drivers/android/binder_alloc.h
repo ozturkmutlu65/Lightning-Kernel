@@ -139,7 +139,11 @@ extern struct binder_buffer *binder_alloc_new_buf(struct binder_alloc *alloc,
 						  int is_async,
 						  int pid);
 extern void binder_alloc_init(struct binder_alloc *alloc);
+<<<<<<< HEAD
 extern int binder_alloc_shrinker_init(void);
+=======
+void binder_alloc_shrinker_init(void);
+>>>>>>> 73cd156e51f631e75a41f24f68109337bed3afb7
 extern void binder_alloc_shrinker_exit(void);
 extern void binder_alloc_vma_close(struct binder_alloc *alloc);
 extern struct binder_buffer *

@@ -6505,9 +6505,12 @@ err_init_binder_device_failed:
 err_alloc_device_names_failed:
 	debugfs_remove_recursive(binder_debugfs_dir_entry_root);
 	binder_alloc_shrinker_exit();
+<<<<<<< HEAD
 
 err_alloc_shrinker_failed:
 	binder_destroy_pools();
+=======
+>>>>>>> 73cd156e51f631e75a41f24f68109337bed3afb7
 
 	return ret;
 }

@@ -295,8 +295,13 @@ static int binder_update_page_range(struct binder_alloc *alloc, int allocate,
 		/* vm_insert_page does not seem to increment the refcount */
 	}
 	if (mm) {
+<<<<<<< HEAD
 		up_read(&mm->mmap_sem);
 		mmput(mm);
+=======
+		up_write(&mm->mmap_sem);
+		mmput_async(mm);
+>>>>>>> 73cd156e51f631e75a41f24f68109337bed3afb7
 	}
 	return 0;
 
@@ -328,8 +333,13 @@ err_page_ptr_cleared:
 	}
 err_no_vma:
 	if (mm) {
+<<<<<<< HEAD
 		up_read(&mm->mmap_sem);
 		mmput(mm);
+=======
+		up_write(&mm->mmap_sem);
+		mmput_async(mm);
+>>>>>>> 73cd156e51f631e75a41f24f68109337bed3afb7
 	}
 	return vma ? -ENOMEM : -ESRCH;
 }
@@ -1115,6 +1125,7 @@ int binder_alloc_shrinker_init(void)
 	return ret;
 }
 
+<<<<<<< HEAD
 /**
  * check_buffer() - verify that buffer/offset is safe to access
  * @alloc: binder_alloc for this proc
@@ -1314,8 +1325,14 @@ void binder_alloc_copy_from_buffer(struct binder_alloc *alloc,
 				    dest, bytes);
 }
 
+=======
+>>>>>>> 73cd156e51f631e75a41f24f68109337bed3afb7
 void binder_alloc_shrinker_exit(void)
 {
 	unregister_shrinker(&binder_shrinker);
 	list_lru_destroy(&binder_alloc_lru);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 73cd156e51f631e75a41f24f68109337bed3afb7

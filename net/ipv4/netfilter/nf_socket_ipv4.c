@@ -100,7 +100,10 @@ struct sock *nf_sk_lookup_slow_v4(struct net *net, const struct sk_buff *skb,
 	__be16 dport, sport;
 	const struct iphdr *iph = ip_hdr(skb);
 	struct sk_buff *data_skb = NULL;
+<<<<<<< HEAD
 	struct sock *sk = skb->sk;
+=======
+>>>>>>> 73cd156e51f631e75a41f24f68109337bed3afb7
 	u8 protocol;
 #if IS_ENABLED(CONFIG_NF_CONNTRACK)
 	enum ip_conntrack_info ctinfo;

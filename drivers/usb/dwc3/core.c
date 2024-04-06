@@ -1481,7 +1481,14 @@ static int dwc3_probe(struct platform_device *pdev)
 	pm_runtime_allow(dev);
 #ifdef CONFIG_DEBUG_FS
 	dwc3_debugfs_init(dwc);
+<<<<<<< HEAD
 #endif
+=======
+	pm_runtime_put(dev);
+
+	dma_set_max_seg_size(dev, UINT_MAX);
+
+>>>>>>> 73cd156e51f631e75a41f24f68109337bed3afb7
 	return 0;
 
 
@@ -1530,8 +1537,15 @@ static int dwc3_remove(struct platform_device *pdev)
 	res->start -= DWC3_GLOBALS_REGS_START;
 #ifdef CONFIG_DEBUG_FS
 	dwc3_debugfs_exit(dwc);
+<<<<<<< HEAD
 #endif
 	dwc3_gadget_exit(dwc);
+=======
+
+	dwc3_core_exit(dwc);
+	dwc3_ulpi_exit(dwc);
+
+>>>>>>> 73cd156e51f631e75a41f24f68109337bed3afb7
 	pm_runtime_allow(&pdev->dev);
 	pm_runtime_disable(&pdev->dev);
 

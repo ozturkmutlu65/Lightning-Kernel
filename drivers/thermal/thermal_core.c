@@ -866,6 +866,7 @@ int thermal_zone_bind_cooling_device(struct thermal_zone_device *tz,
 	if (result)
 		goto remove_symbol_link;
 
+<<<<<<< HEAD
 	snprintf(dev->upper_attr_name, THERMAL_NAME_LENGTH,
 			"cdev%d_upper_limit", dev->id);
 	sysfs_attr_init(&dev->upper_attr.attr);
@@ -888,6 +889,8 @@ int thermal_zone_bind_cooling_device(struct thermal_zone_device *tz,
 	if (result)
 		goto remove_upper_file;
 
+=======
+>>>>>>> 73cd156e51f631e75a41f24f68109337bed3afb7
 	snprintf(dev->weight_attr_name, sizeof(dev->weight_attr_name),
 		 "cdev%d_weight", dev->id);
 	sysfs_attr_init(&dev->weight_attr.attr);

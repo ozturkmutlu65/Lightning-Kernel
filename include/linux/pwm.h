@@ -46,6 +46,7 @@ struct pwm_args {
 enum {
 	PWMF_REQUESTED = 0,
 	PWMF_EXPORTED = 1,
+<<<<<<< HEAD
 };
 
 /**
@@ -69,6 +70,8 @@ struct pwm_output_pattern {
 	u64 *duty_pattern;
 	unsigned int num_entries;
 	u64 cycles_per_duty;
+=======
+>>>>>>> 73cd156e51f631e75a41f24f68109337bed3afb7
 };
 
 /*

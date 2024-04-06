@@ -1068,8 +1068,12 @@ next_step:
 		if (phase == 3) {
 			inode = f2fs_iget(sb, dni.ino);
 			if (IS_ERR(inode) || is_bad_inode(inode) ||
+<<<<<<< HEAD
 					special_file(inode->i_mode)) {
 				set_sbi_flag(sbi, SBI_NEED_FSCK);
+=======
+					special_file(inode->i_mode))
+>>>>>>> 73cd156e51f631e75a41f24f68109337bed3afb7
 				continue;
 			}
 

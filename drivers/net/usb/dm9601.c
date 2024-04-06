@@ -231,7 +231,11 @@ static int dm9601_mdio_read(struct net_device *netdev, int phy_id, int loc)
 	err = dm_read_shared_word(dev, 1, loc, &res);
 	if (err < 0) {
 		netdev_err(dev->net, "MDIO read error: %d\n", err);
+<<<<<<< HEAD
 		return err;
+=======
+		return 0;
+>>>>>>> 73cd156e51f631e75a41f24f68109337bed3afb7
 	}
 
 	netdev_dbg(dev->net,
